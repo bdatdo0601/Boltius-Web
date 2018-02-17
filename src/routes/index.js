@@ -18,3 +18,13 @@ export const ERROR_ROUTES = Object.freeze([
         COMPONENT: Errors,
     },
 ]);
+
+export const SIDE_BAR_ITEMS = Object.freeze([
+    {
+        TITLE: "Overview",
+        LINK: "/",
+        ICON: "dashboard",
+        SUBMENU: [],
+        ONCLICK: () => {},
+    },
+]);

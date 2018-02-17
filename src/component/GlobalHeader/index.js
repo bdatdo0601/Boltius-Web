@@ -7,6 +7,10 @@ const { Header } = Layout;
 
 export default class GlobalHeader extends Component {
     render() {
-        return <Header className="global-header" />;
+        return (
+            <Header className="global-header">
+                <div />
+            </Header>
+        );
     }
 }

@@ -6,6 +6,8 @@ import SideBar from "../../component/SideBar";
 import GlobalFooter from "../../component/GlobalFooter";
 import GlobalHeader from "../../component/GlobalHeader";
 
+import { SIDE_BAR_ITEMS } from "../../routes";
+
 import logo from "../../assets/logo.svg";
 import styles from "./styles";
 import "./index.less";
@@ -24,7 +26,7 @@ class MainLayout extends Component {
     render() {
         return (
             <Layout style={styles.mainLayout}>
-                <SideBar logoPath={logo} logoTitle="WIT SG" />
+                <SideBar sideBarItems={SIDE_BAR_ITEMS} logoPath={logo} logoTitle="WIT SG" />
                 <Layout>
                     <GlobalHeader />
                     <Content className="basic-content">{this.props.children}</Content>
