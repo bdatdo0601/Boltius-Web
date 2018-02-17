@@ -8,7 +8,7 @@ import GlobalHeader from "../../component/GlobalHeader";
 
 import { SIDE_BAR_ITEMS } from "../../routes";
 
-import logo from "../../assets/logo.svg";
+import logo from "../../assets/logo.png";
 import styles from "./styles";
 import "./index.less";
 
@@ -26,7 +26,7 @@ class MainLayout extends Component {
     render() {
         return (
             <Layout style={styles.mainLayout}>
-                <SideBar sideBarItems={SIDE_BAR_ITEMS} logoPath={logo} logoTitle="WIT SG" />
+                <SideBar sideBarItems={SIDE_BAR_ITEMS} logoPath={logo} logoTitle="Boltius Tool" />
                 <Layout>
                     <GlobalHeader />
                     <Content className="basic-content">{this.props.children}</Content>
