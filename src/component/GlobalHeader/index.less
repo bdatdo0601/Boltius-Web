@@ -1,9 +1,21 @@
 @import "~antd/dist/antd.less"; 
 
-.global-header-logo {
-    width: 120px;
-    height: 31px;
-    background: rgba(255,255,255,.2);  
-    margin: 16px 28px 16px 0;
-    float: left;
+.global-header {
+  padding: 0 12px 0 0;
+  box-shadow: 0 1px 4px rgba(0, 21, 41, .08);
+  position: relative;
+}
+
+:global {
+  .ant-layout {
+    overflow-x: hidden;
   }
+}
+
+@media only screen and (max-width: @screen-md) {
+  .global-header {
+    :global(.ant-divider-vertical) {
+      vertical-align: unset;
+    }
+  }
+}

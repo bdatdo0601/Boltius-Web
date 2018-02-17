@@ -18,6 +18,7 @@ class App extends Component {
                 <Switch>
                     {MAIN_ROUTES.map(ROUTE => (
                         <Route
+                            key={ROUTE.PATH}
                             exact={ROUTE.EXACT}
                             path={ROUTE.PATH}
                             render={() => renderWithMainLayout(ROUTE.COMPONENT)}
@@ -25,6 +26,7 @@ class App extends Component {
                     ))}
                     {ERROR_ROUTES.map(ROUTE => (
                         <Route
+                            key={ROUTE.PATH}
                             exact={ROUTE.EXACT}
                             path={ROUTE.PATH}
                             render={() => renderWithErrorLayout(ROUTE.COMPONENT)}
