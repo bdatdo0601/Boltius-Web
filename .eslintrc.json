@@ -28,6 +28,7 @@
     ],
     "parser": "babel-eslint",
     "rules": {
+        "object-curly-newline": "off",
         "max-len": "off",
         "comma-dangle": "off",
         "arrow-parens": "off",
