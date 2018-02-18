@@ -1,0 +1,90 @@
+@import "~antd/dist/antd.less";
+
+.page-header {
+  background: @component-background;
+  padding: 16px 24px 0 24px;
+  border-bottom: @border-width-base @border-style-base @border-color-split;
+  img {
+    max-width:50%;
+  }
+  .row {
+    display: flex;
+  }
+
+  .breadcrumb {
+    background: @component-background;
+    margin-bottom: 16px;
+  }
+
+  .title {
+    font-size: 20px;
+    font-weight: 500;
+    color: @heading-color;
+  }
+
+  .content, .pageHeaderMain {
+    flex: auto;
+  }
+
+  .title {
+    margin-bottom: 16px;
+  }
+
+  .content {
+    position: relative;
+    margin-bottom: 16px;
+  }
+
+  .content-link {
+    margin-top: 16px;
+    p {
+      margin-right: 32px;
+      img {
+        width: 24px;
+      }
+    }
+    img {
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+  }
+}
+
+
+@media screen and (max-width: @screen-md) {
+  .page-header {
+    .row {
+      display: block;
+    }
+
+    .content-link {
+      p {
+        margin-right: 16px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: @screen-sm) {
+  .page-header {
+
+    .content {
+      padding-bottom: 30px;
+    }
+    .contentLink {
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 1000px;
+      p {
+        margin-right: 16px;
+      }
+      img {
+        margin-right: 4px;
+      }
+    }
+  }
+
+}
+
+

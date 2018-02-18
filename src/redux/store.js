@@ -20,7 +20,7 @@ if (process.env.NODE_ENV === "development") {
     middlewares.push(logger);
 }
 
-middlewares.push(thunkMiddleware, promiseMiddleware);
+middlewares.push(thunkMiddleware, promiseMiddleware());
 
 const store = compose(applyMiddleware(...middlewares))(createStore)(MainReducer);
 
