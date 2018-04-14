@@ -23,7 +23,7 @@
     },
     "scripts": {
         "lint": "eslint --ignore-path ./.eslintignore --ext .js, ./",
-        "start": "react-app-rewired start",
+        "start": "NODE_ENV=development react-app-rewired start",
         "build": "react-app-rewired build",
         "test": "react-app-rewired test --env=jsdom",
         "eject": "react-scripts eject"

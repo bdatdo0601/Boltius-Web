@@ -1,7 +1,9 @@
 const ON_NAVBAR_CHANGE = "ON_NAVBAR_CHANGE";
+const CHECK_MOBILE_FULFILL = "CHECK_MOBILE_FULFILL";
 
 export const GlobalActionTypes = {
     ON_NAVBAR_CHANGE,
+    CHECK_MOBILE_FULFILL,
 };
 
 export const GlobalActions = {
@@ -13,4 +15,8 @@ export const GlobalActions = {
             type: ON_NAVBAR_CHANGE,
         });
     },
+    checkMobileSize: () => ({
+        type: CHECK_MOBILE_FULFILL,
+        payload: window.matchMedia("only screen and (max-width: 760px)").matches,
+    }),
 };
