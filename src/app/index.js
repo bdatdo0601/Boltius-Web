@@ -17,6 +17,7 @@ class App extends Component {
         window.addEventListener("resize", () => {
             this.props.checkMobileSize();
         });
+        this.props.checkMobileSize();
     }
 
     render() {

@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import { bindActionCreators } from "redux";
 import { Layout, Menu, Breadcrumb, Icon } from "antd";
+import logo from "../../assets/images/logo.png";
 
 import { SIDE_BAR_ITEMS } from "../../routes";
 import { GlobalActions } from "../../redux/actions/GlobalActions";
@@ -42,15 +43,20 @@ class MainLayout extends Component {
         children: PropTypes.node,
         history: PropTypes.object.isRequired,
         isMobile: PropTypes.bool.isRequired,
+        title: PropTypes.string,
+        shortenedTitle: PropTypes.string,
+        logo: PropTypes.string,
     };
 
     static defaultProps = {
         children: <h1>Content</h1>,
+        title: "Wentworth Student Government",
+        shortenedTitle: "WITSG",
+        logo,
     };
 
     constructor(props) {
         super(props);
-        console.log(props.isMobile);
         this.state = {
             collapsed: props.isMobile,
         };
@@ -78,9 +84,18 @@ class MainLayout extends Component {
         }
     };
 
+    renderLogo = () => (
+        <div className="logo" key="logo">
+            <Link to="/">
+                <img src={this.props.logo} alt="logo" />
+                <h1>{this.props.shortenedTitle}</h1>
+            </Link>
+        </div>
+    );
+
     renderSideMenu = () => (
         <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
-            <div className="logo" />
+            {this.renderLogo()}
             <Menu
                 theme="dark"
                 defaultSelectedKeys={[SIDE_BAR_ITEMS[0].TITLE]}
@@ -105,13 +120,21 @@ class MainLayout extends Component {
         );
     };
 
+    renderHeader = () => (
+        <Header style={{ background: "#fff", paddingLeft: 16 }}>
+            {this.state.collapsed && (
+                <h1 className="headerTitle">{this.props.isMobile ? this.props.shortenedTitle : this.props.title}</h1>
+            )}
+        </Header>
+    );
+
     render() {
         console.log(this.renderBreadCrumbs());
         return (
             <Layout style={{ minHeight: "100vh" }}>
                 {this.renderSideMenu()}
                 <Layout>
-                    <Header style={{ background: "#fff", padding: 0 }} />
+                    {this.renderHeader()}
                     <Content style={{ margin: "0 16px" }}>
                         {this.renderBreadCrumbs()}
                         {this.props.children}
