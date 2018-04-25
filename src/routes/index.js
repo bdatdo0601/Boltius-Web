@@ -9,6 +9,14 @@ export const SIDE_BAR_ITEMS = Object.freeze([
         SUBITEMS: [],
     },
     {
+        TITLE: "WITSG Resources",
+        ICON: "file",
+        SUBITEMS: [
+            { KEY: "constitution", TITLE: "Our Constitution", PATH: "/constitution" },
+            { KEY: "sponsorship", TITLE: "Co-Sponsorship", PATH: "/sponsorship" },
+        ],
+    },
+    {
         TITLE: "Resources",
         ICON: "folder",
         SUBITEMS: [{ KEY: "academic", TITLE: "Academic", PATH: "/academic" }],

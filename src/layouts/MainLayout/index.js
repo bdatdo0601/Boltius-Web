@@ -123,13 +123,16 @@ class MainLayout extends Component {
     renderHeader = () => (
         <Header style={{ background: "#fff", paddingLeft: 16 }}>
             {this.state.collapsed && (
-                <h1 className="headerTitle">{this.props.isMobile ? this.props.shortenedTitle : this.props.title}</h1>
+                <center>
+                    <h1 className="headerTitle">
+                        {this.props.isMobile ? this.props.shortenedTitle : this.props.title}
+                    </h1>
+                </center>
             )}
         </Header>
     );
 
     render() {
-        console.log(this.renderBreadCrumbs());
         return (
             <Layout style={{ minHeight: "100vh" }}>
                 {this.renderSideMenu()}
@@ -137,7 +140,7 @@ class MainLayout extends Component {
                     {this.renderHeader()}
                     <Content style={{ margin: "0 16px" }}>
                         {this.renderBreadCrumbs()}
-                        {this.props.children}
+                        <div style={{ paddingTop: 8 }}>{this.props.children}</div>
                     </Content>
                     <Footer style={{ textAlign: "center" }}>WIT@CSS and WITSG ©2016 Created by Dat Do</Footer>
                 </Layout>
