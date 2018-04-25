@@ -11,7 +11,43 @@ export default Object.freeze({
             src: "https://cpb-us-e1.wpmucdn.com/sites.wit.edu/dist/0/158/files/2016/02/Untitled7.png",
             alt: "logo",
         },
-        socialProfiles: [],
+        socialProfiles: [
+            {
+                key: "twitter",
+                username: "WSG",
+                displayName: "@wsgwit",
+                iconKey: "twitter-square",
+                link: "https://twitter.com/wsgwit",
+            },
+            {
+                key: "facebook",
+                username: "Wentworth Student Government",
+                displayName: "@witwsg",
+                iconKey: "facebook-square",
+                link: "https://www.facebook.com/witwsg/",
+            },
+            {
+                key: "instagram",
+                username: "Wentworth Student Government",
+                displayName: "@WSG",
+                iconKey: "instagram",
+                link: "https://www.instagram.com/wentworthstudentgovernment/",
+            },
+            {
+                key: "website",
+                username: "Wentworth Student Government Main Webpage",
+                displayName: "WSG Homepage",
+                iconKey: "globe",
+                link: "https://sites.wit.edu/wsg2/",
+            },
+            {
+                key: "snapchat",
+                username: "witsg",
+                displayName: "witsg",
+                iconKey: "snapchat-square",
+                link: "",
+            },
+        ],
     },
     eboards: [
         {
