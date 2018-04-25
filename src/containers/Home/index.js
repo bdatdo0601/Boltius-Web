@@ -33,7 +33,7 @@ class Home extends Component {
                         />
                     </Col>
                     <Col className="header-column" md={6} xs={24}>
-                        <SocialProfileCard />
+                        <SocialProfileCard socialProfiles={homeData.basics.socialProfiles} />
                     </Col>
                 </Row>
             </MainLayout>
