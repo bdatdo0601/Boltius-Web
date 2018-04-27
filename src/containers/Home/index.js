@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { bindActionCreators } from "redux";
@@ -20,6 +21,9 @@ import homeData from "../../__mocks__/homeData";
 import "./index.less";
 
 class Home extends Component {
+    static propTypes = {
+        isMobile: PropTypes.bool.isRequired,
+    };
     render() {
         console.log(
             RSSData.getFeed().then(data => {
@@ -29,20 +33,20 @@ class Home extends Component {
         return (
             <MainLayout>
                 <Row className="home-row" gutter={24} type="flex" justify="center" align="middle">
-                    <Col className="header-column" md={16} xs={24}>
+                    <Col className="header-column" md={14} xs={24}>
                         <BasicInfoCard
                             slogan={homeData.basics.slogan}
                             missionStatement={homeData.basics.mission}
                             logo={homeData.basics.logo}
                         />
                     </Col>
-                    <Col className="header-column" md={8} xs={24}>
+                    <Col className="header-column" md={10} xs={24}>
                         <SocialProfileCard socialProfiles={homeData.basics.socialProfiles} />
                     </Col>
                 </Row>
                 <Row className="home-row" gutter={24} type="flex" justify="center" align="middle">
                     <Col className="header-column" md={24} xs={24}>
-                        <NewsFeedCard />
+                        <NewsFeedCard isMobile={this.props.isMobile} />
                     </Col>
                 </Row>
             </MainLayout>
