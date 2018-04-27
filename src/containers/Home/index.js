@@ -12,6 +12,8 @@ import NewsFeedCard from "../../components/Home/NewsFeedCard";
 
 import MainLayout from "../../layouts/MainLayout";
 
+import RSSData from "../../utils/rss";
+
 // Test
 import homeData from "../../__mocks__/homeData";
 
@@ -19,21 +21,28 @@ import "./index.less";
 
 class Home extends Component {
     render() {
+        console.log(
+            RSSData.getFeed().then(data => {
+                console.log(data);
+            })
+        );
         return (
             <MainLayout>
-                <Row gutter={16} type="flex" justify="center" align="top">
-                    <Col className="header-column" md={6} xs={24}>
-                        <NewsFeedCard />
-                    </Col>
-                    <Col className="header-column" md={10} xs={24}>
+                <Row className="home-row" gutter={24} type="flex" justify="center" align="middle">
+                    <Col className="header-column" md={16} xs={24}>
                         <BasicInfoCard
                             slogan={homeData.basics.slogan}
                             missionStatement={homeData.basics.mission}
                             logo={homeData.basics.logo}
                         />
                     </Col>
-                    <Col className="header-column" md={6} xs={24}>
+                    <Col className="header-column" md={8} xs={24}>
                         <SocialProfileCard socialProfiles={homeData.basics.socialProfiles} />
+                    </Col>
+                </Row>
+                <Row className="home-row" gutter={24} type="flex" justify="center" align="middle">
+                    <Col className="header-column" md={24} xs={24}>
+                        <NewsFeedCard />
                     </Col>
                 </Row>
             </MainLayout>
