@@ -7,7 +7,7 @@ import "./index.less";
 
 const getSocialProfile = profile => (
     <div key={profile.key} className="socialProfileItem">
-        <FontAwesomeIcon className="socialProfileIcon" name={profile.iconKey} size="3x" />
+        <FontAwesomeIcon className="socialProfileIcon" name={profile.iconKey} size="2x" />
         <h2 className="socialProfileText">
             <a href={profile.link}>{profile.displayName}</a>
         </h2>
