@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { bindActionCreators } from "redux";
 import { Row, Col } from "antd";
+import _ from "lodash";
 
 import { GlobalActions } from "../../redux/actions/GlobalActions";
 
@@ -56,7 +57,10 @@ class Home extends Component {
                 </Row>
                 <Row className="home-row" gutter={24} type="flex" justify="center" align="middle">
                     <Col className="header-column" md={24} xs={24}>
-                        <NewsFeedCard isMobile={this.props.isMobile} witNewsFeedData={witNewsFeedRSSFeed.items} />
+                        <NewsFeedCard
+                            isMobile={this.props.isMobile}
+                            witNewsFeedData={_.reverse(_.sortBy(witNewsFeedRSSFeed.items, "isoDate"))}
+                        />
                     </Col>
                 </Row>
             </MainLayout>

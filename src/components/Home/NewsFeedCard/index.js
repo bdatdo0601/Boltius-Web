@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-import { Card, Tabs, List, Spin } from "antd";
+import moment from "moment";
+import { Card, Tabs, List, Spin, Avatar } from "antd";
 import InfiniteScroll from "react-infinite-scroller";
+
+import witLogo from "../../../assets/images/CPCE-logo.PNG";
 
 import "./index.less";
 
@@ -16,6 +19,7 @@ class NewsFeedCard extends Component {
         isMobile: PropTypes.bool,
         witNewsFeedData: PropTypes.array,
         pageSize: PropTypes.number,
+        witNewsAvatar: PropTypes.string,
     };
 
     static defaultProps = {
@@ -23,12 +27,13 @@ class NewsFeedCard extends Component {
         isMobile: false,
         witNewsFeedData: [],
         pageSize: 10,
+        witNewsAvatar: witLogo,
     };
 
     static getDerivedStateFromProps(nextProps, prevState) {
         const { witNewsFeedData, pageSize } = nextProps;
-        const { newsDisplayDataCursor } = prevState;
-        if (witNewsFeedData.length !== 0) {
+        const { newsDisplayDataCursor, newsDisplayData } = prevState;
+        if (witNewsFeedData.length !== 0 && newsDisplayData.length === 0) {
             const distanceToNewsFeedEnd = witNewsFeedData.length - newsDisplayDataCursor;
             const cursorOffset = distanceToNewsFeedEnd > pageSize ? pageSize : distanceToNewsFeedEnd;
             return {
@@ -50,7 +55,7 @@ class NewsFeedCard extends Component {
         };
     }
 
-    loadMoreData = () => {
+    loadMoreNewsData = () => {
         const { witNewsFeedData, pageSize } = this.props;
         const { newsDisplayDataCursor, newsDisplayData } = this.state;
         const distanceToNewsFeedEnd = witNewsFeedData.length - newsDisplayDataCursor;
@@ -82,7 +87,7 @@ class NewsFeedCard extends Component {
                             <InfiniteScroll
                                 initialLoad={false}
                                 pageStart={0}
-                                loadMore={this.loadMoreData}
+                                loadMore={this.loadMoreNewsData}
                                 hasMore={!this.state.loading && this.state.hasMore}
                                 useWindow={false}
                             >
@@ -92,8 +97,12 @@ class NewsFeedCard extends Component {
                                         emptyText: "Unable to fetch news feed",
                                     }}
                                     renderItem={item => (
-                                        <List.Item key={item.guid}>
+                                        <List.Item
+                                            key={item.guid}
+                                            actions={[moment(item.isoDate).format("MMM Do YYYY")]}
+                                        >
                                             <List.Item.Meta
+                                                avatar={<Avatar src={this.props.witNewsAvatar} />}
                                                 title={
                                                     <a href={item.link}>
                                                         <b>{item.title}</b>

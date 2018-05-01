@@ -94,7 +94,7 @@ class MainLayout extends Component {
     );
 
     renderSideMenu = () => (
-        <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
+        <Sider collapsed onCollapse={this.onCollapse}>
             {this.renderLogo()}
             <Menu
                 theme="dark"
