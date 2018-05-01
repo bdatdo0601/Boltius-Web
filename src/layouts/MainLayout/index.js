@@ -55,23 +55,12 @@ class MainLayout extends Component {
         logo,
     };
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            collapsed: props.isMobile,
-        };
-    }
-
     static getDerivedStateFromProps(nextProps, prevState) {
         if (nextProps.isMobile && !prevState.collapsed) {
             return { collapsed: nextProps.isMobile };
         }
         return null;
     }
-
-    onCollapse = collapsed => {
-        this.setState({ collapsed });
-    };
 
     onMenuItemSelect = ({ key }) => {
         const selectedKey = SIDE_BAR_ITEMS.find(
@@ -94,7 +83,7 @@ class MainLayout extends Component {
     );
 
     renderSideMenu = () => (
-        <Sider collapsed onCollapse={this.onCollapse}>
+        <Sider collapsed>
             {this.renderLogo()}
             <Menu
                 theme="dark"
