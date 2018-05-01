@@ -10,16 +10,30 @@
     margin: 8px;
 }
 
-.demo-infinite-container {
+.infinite-container {
     border: 1px solid #e8e8e8;
     border-radius: 4px;
-    overflow: auto;
+    overflow-y: scroll;
     padding: 8px 24px;
-    height: 300px;
+    height: 210px;
 }
-.demo-loading-container {
+.loading-container {
     position: absolute;
     bottom: 40px;
     width: 100%;
     text-align: center;
+}
+
+.visible-scrollbar::-webkit-scrollbar {
+    display: block;
+    width: 1em;
+}
+
+.visible-scrollbar::-webkit-scrollbar-track {
+    background-color: lightgray;
+}
+
+.visible-scrollbar::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
 }

@@ -24,12 +24,22 @@ class Home extends Component {
     static propTypes = {
         isMobile: PropTypes.bool.isRequired,
     };
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            witNewsFeedRSSFeed: [],
+        };
+    }
+
+    componentDidMount() {
+        RSSData.getFeed().then(data => {
+            this.setState({ witNewsFeedRSSFeed: data });
+        });
+    }
+
     render() {
-        console.log(
-            RSSData.getFeed().then(data => {
-                console.log(data);
-            })
-        );
+        const { witNewsFeedRSSFeed } = this.state;
         return (
             <MainLayout>
                 <Row className="home-row" gutter={24} type="flex" justify="center" align="middle">
@@ -46,7 +56,7 @@ class Home extends Component {
                 </Row>
                 <Row className="home-row" gutter={24} type="flex" justify="center" align="middle">
                     <Col className="header-column" md={24} xs={24}>
-                        <NewsFeedCard isMobile={this.props.isMobile} />
+                        <NewsFeedCard isMobile={this.props.isMobile} witNewsFeedData={witNewsFeedRSSFeed.items} />
                     </Col>
                 </Row>
             </MainLayout>
