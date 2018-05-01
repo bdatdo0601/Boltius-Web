@@ -94,7 +94,7 @@ class MainLayout extends Component {
     );
 
     renderSideMenu = () => (
-        <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
+        <Sider collapsed onCollapse={this.onCollapse}>
             {this.renderLogo()}
             <Menu
                 theme="dark"
@@ -122,13 +122,9 @@ class MainLayout extends Component {
 
     renderHeader = () => (
         <Header style={{ background: "#fff", paddingLeft: 16 }}>
-            {this.state.collapsed && (
-                <center>
-                    <h1 className="headerTitle">
-                        {this.props.isMobile ? this.props.shortenedTitle : this.props.title}
-                    </h1>
-                </center>
-            )}
+            <center>
+                <h1 className="headerTitle">{this.props.isMobile ? this.props.shortenedTitle : this.props.title}</h1>
+            </center>
         </Header>
     );
 

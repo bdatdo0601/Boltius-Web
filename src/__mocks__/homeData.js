@@ -1,4 +1,4 @@
-import moment from "moment";
+// import moment from "moment";
 
 export default Object.freeze({
     basics: {
@@ -85,72 +85,72 @@ export default Object.freeze({
             answer: "Student Government is for every student on campus, stop by a meeting and see how you like it!",
         },
     ],
-    accomplishments: [
-        {
-            key: "water refill",
-            description:
-                "Installation of a water bottle refill station in Beatty Hall cafe and in the Schumann fitness center.",
-            completedDate: moment("2015").format("YYYY"),
-        },
-        {
-            key: "cell phone charging",
-            description: "Cellphone charging station in the Flanagan campus center.",
-            completedDate: moment("2015").format("YYYY"),
-        },
-        {
-            key: "water refill",
-            description:
-                "Installation of a water bottle refill station in Beatty Hall cafe and in the Schumann fitness center.",
-            completedDate: moment("2015").format("YYYY"),
-        },
-        {
-            key: "Gender Neutral housing",
-            description:
-                "Hosted an open forum with the Office of Housing and Residential Life where students learned of the new Gender Neutral Housing options.",
-            completedDate: moment("2015").format("YYYY"),
-        },
-        {
-            key: "EPIC Initiative",
-            description:
-                "Hosted an open forum with the Provost, Dr. Russell Pinizzotto, where students and faculty learned about the new E.P.I.C. initiative.",
-            completedDate: moment("2015").format("YYYY"),
-        },
-        {
-            key: "Chartwells Concern",
-            description:
-                "Hosted an open forum with Chartwells where students were able to voice their concerns and ideas to help improve campus dining.",
-            completedDate: moment("2015").format("YYYY"),
-        },
-        {
-            key: "handsanitizer",
-            description: "Installation of hand sanitizers at every residence hall elevator lobby.",
-            completedDate: moment("2014").format("YYYY"),
-        },
-        {
-            key: "beattyTV",
-            description: "Student input into the design of the new Flannagan Campus Center.",
-            completedDate: moment("2014").format("YYYY"),
-        },
-        {
-            key: "laptop upgrade",
-            description: "Re-Upgrade of Lenovo Laptops from T-Series to W-Series.",
-            completedDate: moment("2014").format("YYYY"),
-        },
-        {
-            key: "foodoptions",
-            description: "Changes in service and food options in the Beatty Hall Cafeteria.",
-            completedDate: moment("2014").format("YYYY"),
-        },
-        {
-            key: "mission hill",
-            description:
-                "Various goodwill events such as Mission Hill Street Cleanup and raising money for the Jimmy Fund.",
-            completedDate: moment("2014").format("YYYY"),
-        },
-        {
-            key: "student org centraization",
-            description: "Centralization of student club organization through SLP and OrgSync.",
-            completedDate: moment("2014").format("YYYY"),
-        },
-    ],
+    // accomplishments: [
+    //     {
+    //         key: "water refill",
+    //         description:
+    //             "Installation of a water bottle refill station in Beatty Hall cafe and in the Schumann fitness center.",
+    //         completedDate: moment("2015").format("YYYY"),
+    //     },
+    //     {
+    //         key: "cell phone charging",
+    //         description: "Cellphone charging station in the Flanagan campus center.",
+    //         completedDate: moment("2015").format("YYYY"),
+    //     },
+    //     {
+    //         key: "water refill",
+    //         description:
+    //             "Installation of a water bottle refill station in Beatty Hall cafe and in the Schumann fitness center.",
+    //         completedDate: moment("2015").format("YYYY"),
+    //     },
+    //     {
+    //         key: "Gender Neutral housing",
+    //         description:
+    //             "Hosted an open forum with the Office of Housing and Residential Life where students learned of the new Gender Neutral Housing options.",
+    //         completedDate: moment("2015").format("YYYY"),
+    //     },
+    //     {
+    //         key: "EPIC Initiative",
+    //         description:
+    //             "Hosted an open forum with the Provost, Dr. Russell Pinizzotto, where students and faculty learned about the new E.P.I.C. initiative.",
+    //         completedDate: moment("2015").format("YYYY"),
+    //     },
+    //     {
+    //         key: "Chartwells Concern",
+    //         description:
+    //             "Hosted an open forum with Chartwells where students were able to voice their concerns and ideas to help improve campus dining.",
+    //         completedDate: moment("2015").format("YYYY"),
+    //     },
+    //     {
+    //         key: "handsanitizer",
+    //         description: "Installation of hand sanitizers at every residence hall elevator lobby.",
+    //         completedDate: moment("2014").format("YYYY"),
+    //     },
+    //     {
+    //         key: "beattyTV",
+    //         description: "Student input into the design of the new Flannagan Campus Center.",
+    //         completedDate: moment("2014").format("YYYY"),
+    //     },
+    //     {
+    //         key: "laptop upgrade",
+    //         description: "Re-Upgrade of Lenovo Laptops from T-Series to W-Series.",
+    //         completedDate: moment("2014").format("YYYY"),
+    //     },
+    //     {
+    //         key: "foodoptions",
+    //         description: "Changes in service and food options in the Beatty Hall Cafeteria.",
+    //         completedDate: moment("2014").format("YYYY"),
+    //     },
+    //     {
+    //         key: "mission hill",
+    //         description:
+    //             "Various goodwill events such as Mission Hill Street Cleanup and raising money for the Jimmy Fund.",
+    //         completedDate: moment("2014").format("YYYY"),
+    //     },
+    //     {
+    //         key: "student org centraization",
+    //         description: "Centralization of student club organization through SLP and OrgSync.",
+    //         completedDate: moment("2014").format("YYYY"),
+    //     },
+    // ],
 });
